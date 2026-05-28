@@ -7,11 +7,14 @@ export default function Experience() {
     <div id="experience-timeline-container" className="space-y-12">
       
       {/* Timeline Section Header */}
-      <div id="experience-timeline-header" className="flex items-center gap-3">
-        <h2 id="experience-timeline-title" className="text-sm uppercase tracking-[0.2em] text-zinc-500 font-medium font-mono">
-          Career Journey & Accomplishments
-        </h2>
-        <div className="h-px bg-zinc-800/80 flex-1" />
+      <div id="experience-timeline-header" className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
+          <span className="text-emerald-500 font-mono text-sm font-bold">02</span>
+          <h2 id="experience-timeline-title" className="text-2xl font-bold text-white tracking-tight">
+            Experience
+          </h2>
+        </div>
+        <div className="h-px bg-zinc-800 flex-1" />
       </div>
 
       {/* Alternate Spine Timeline Area */}
@@ -54,7 +57,7 @@ export default function Experience() {
                     className="bg-white rounded-xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-zinc-100 hover:shadow-[0_12px_40px_rgb(0,0,0,0.18)] transition-all duration-300 transform hover:-translate-y-1 text-left relative"
                   >
                     {/* Small Italicized Date Marker inside the card */}
-                    <div className="flex items-center gap-1.5 text-base text-zinc-500 font-mono mb-2.5 justify-start">
+                    <div className="flex items-center gap-1.5 text-sm text-zinc-500 font-mono mb-3 justify-start">
                       <Calendar className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                       <span className="italic font-serif font-light">
                         {exp.startDate} &mdash; {exp.endDate}
@@ -62,12 +65,12 @@ export default function Experience() {
                     </div>
 
                     {/* Clear Title */}
-                    <h3 id={`timeline-role-title-${exp.id}`} className="text-base font-extrabold text-zinc-900 tracking-tight">
+                    <h3 id={`timeline-role-title-${exp.id}`} className="text-xl font-extrabold text-zinc-900 tracking-tight">
                       {exp.role}
                     </h3>
 
                     {/* Subtitle / Company Line */}
-                    <div id={`timeline-org-row-${exp.id}`} className="flex flex-wrap items-center gap-2 text-base text-teal-700 font-mono font-bold mt-1 uppercase tracking-wide">
+                    <div id={`timeline-org-row-${exp.id}`} className="flex flex-wrap items-center gap-2 text-sm text-teal-700 font-mono font-bold mt-1 uppercase tracking-wide">
                       <span className="bg-teal-50 px-2 py-0.5 rounded border border-teal-100/50">
                         {exp.company}
                       </span>
@@ -79,10 +82,10 @@ export default function Experience() {
                     </div>
 
                     {/* Description Paragraph/Bullets */}
-                    <ul id={`timeline-desc-bullets-${exp.id}`} className="mt-4 space-y-2 text-zinc-700 text-base md:text-[13px] leading-relaxed">
+                    <ul id={`timeline-desc-bullets-${exp.id}`} className="mt-4 space-y-2.5 text-zinc-700 text-sm leading-relaxed">
                       {exp.bulletPoints.map((point, pIdx) => (
                         <li key={pIdx} className="flex gap-2.5 items-start">
-                          <span className="text-emerald-500 font-bold select-none text-base mt-0.5">&#10003;</span>
+                          <span className="text-emerald-500 font-bold select-none text-sm mt-0.5">&#10003;</span>
                           <span className="font-sans font-light text-justify">{point}</span>
                         </li>
                       ))}

@@ -46,11 +46,11 @@ export default function Projects() {
     <div id="projects-section-wrapper" className="space-y-6">
       
       {/* HEADER AND FILTER CONTROLS */}
-      <div id="projects-header" className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-800/80 pb-3">
+      <div id="projects-header" className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-800/80 pb-4">
         <div id="projects-title-container" className="flex items-center gap-2">
-          <h2 id="projects-title" className="text-sm uppercase tracking-[0.2em] text-zinc-500 font-medium font-mono">
+          <h3 id="projects-title" className="text-base font-semibold text-zinc-300 font-sans">
             Selected Portfolios
-          </h2>
+          </h3>
         </div>
 
         {/* Categories Selector in Slash-Separated Minimalist Style */}
@@ -61,10 +61,10 @@ export default function Projects() {
               <button
                 id={`filter-btn-${cat.key}`}
                 onClick={() => { setFilter(cat.key); setExpandedId(null); }}
-                className={`text-sm font-mono tracking-widest uppercase transition-colors rounded-none focus:outline-none ${
+                className={`text-sm font-medium font-sans tracking-normal transition-all rounded-lg px-3 py-1.5 focus:outline-none ${
                   filter === cat.key
-                    ? 'text-white font-normal underline underline-offset-4 decoration-zinc-500'
-                    : 'text-zinc-500 hover:text-zinc-300'
+                    ? 'text-white bg-zinc-800 font-semibold'
+                    : 'text-zinc-500 hover:text-zinc-300 hover:bg-zinc-900'
                 }`}
               >
                 {cat.label}
@@ -93,7 +93,7 @@ export default function Projects() {
                     <span>{getCategoryLabel(proj.category)}</span>
                   </div>
                   {/* Project Title */}
-                  <h4 id={`project-title-${proj.id}`} className="text-lg font-light tracking-tight text-white uppercase mt-0.5 font-sans">
+                  <h4 id={`project-title-${proj.id}`} className="text-xl font-semibold tracking-tight text-white mt-1 font-sans">
                     {proj.title}
                   </h4>
                 </div>
@@ -140,7 +140,7 @@ export default function Projects() {
               </div>
 
               {/* Core Description - Elegant Serif Type */}
-              <p id={`project-desc-${proj.id}`} className="text-sm text-zinc-300 font-serif leading-relaxed italic font-light">
+              <p id={`project-desc-${proj.id}`} className="text-base text-zinc-300 font-serif leading-relaxed italic font-light">
                 "{proj.description}"
               </p>
 
