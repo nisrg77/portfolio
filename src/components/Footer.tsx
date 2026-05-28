@@ -238,14 +238,14 @@ export default function Footer() {
       />
 
       {/* Grid Content Overlay sitting legibly over canvas - Balanced Two Column Layout */}
-      <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 z-20">
+      <div className="relative max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 z-20">
         
         {/* Left Column (6 Columns): Minimal Typographic Brand panel */}
         <div id="footer-brand-panel" className="md:col-span-6 flex flex-col justify-between space-y-8 md:space-y-0 text-left">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-              <span className="font-mono text-[9px] tracking-[0.3em] text-zinc-500 uppercase">
+              <span className="font-mono text-sm tracking-[0.3em] text-zinc-500 uppercase">
                 Location & Origin
               </span>
             </div>
@@ -256,7 +256,7 @@ export default function Footer() {
             </h3>
           </div>
 
-          <div className="space-y-2 border-t border-zinc-900/60 pt-6 text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+          <div className="space-y-2 border-t border-zinc-900/60 pt-6 text-sm font-mono text-zinc-600 uppercase tracking-widest">
             <p>NISARG RANA , 2026</p>
           </div>
         </div>
@@ -265,11 +265,11 @@ export default function Footer() {
         <div id="footer-reachout-panel" className="md:col-span-6 space-y-6 text-left">
           <div className="flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <h4 className="font-mono text-[10px] tracking-[0.25em] text-white uppercase">
+            <h4 className="font-mono text-sm tracking-[0.25em] text-white uppercase">
               Correspondence / Reach Out
             </h4>
           </div>
-          <p className="text-zinc-400 text-xs leading-relaxed font-sans max-w-md">
+          <p className="text-zinc-400 text-base leading-relaxed font-sans max-w-md">
             Have an opportunity, a project proposal, or simply a question? Send an instant transmission. I will receive it directly.
           </p>
 
@@ -277,7 +277,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Name field */}
               <div className="space-y-1">
-                <label htmlFor="footer-field-name" className="text-[9px] font-mono uppercase text-zinc-500 tracking-widest block">
+                <label htmlFor="footer-field-name" className="text-sm font-mono uppercase text-zinc-500 tracking-widest block">
                   Your Name
                 </label>
                 <input
@@ -289,13 +289,13 @@ export default function Footer() {
                   onChange={handleChange}
                   placeholder="e.g. Liam Vance"
                   disabled={status.type === 'loading'}
-                  className="w-full text-xs font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700"
+                  className="w-full text-base font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700"
                 />
               </div>
 
               {/* Email field */}
               <div className="space-y-1">
-                <label htmlFor="footer-field-email" className="text-[9px] font-mono uppercase text-zinc-500 tracking-widest block">
+                <label htmlFor="footer-field-email" className="text-sm font-mono uppercase text-zinc-500 tracking-widest block">
                   Email Address
                 </label>
                 <input
@@ -307,14 +307,14 @@ export default function Footer() {
                   onChange={handleChange}
                   placeholder="e.g. liam@company.com"
                   disabled={status.type === 'loading'}
-                  className="w-full text-xs font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700"
+                  className="w-full text-base font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700"
                 />
               </div>
             </div>
 
             {/* Message field */}
             <div className="space-y-1">
-              <label htmlFor="footer-field-message" className="text-[9px] font-mono uppercase text-zinc-500 tracking-widest block">
+              <label htmlFor="footer-field-message" className="text-sm font-mono uppercase text-zinc-500 tracking-widest block">
                 Message Content
               </label>
               <textarea
@@ -326,7 +326,7 @@ export default function Footer() {
                 onChange={handleChange}
                 placeholder="Outline your proposal, request, or details..."
                 disabled={status.type === 'loading'}
-                className="w-full text-xs font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700 resize-none animate-none"
+                className="w-full text-base font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700 resize-none animate-none"
               />
             </div>
 
@@ -334,13 +334,13 @@ export default function Footer() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
               <div className="flex-1">
                 {status.type === 'loading' && (
-                  <div role="status" className="flex items-center gap-2 text-zinc-400 text-xs font-mono font-light">
+                  <div role="status" className="flex items-center gap-2 text-zinc-400 text-base font-mono font-light">
                     <div className="w-3.5 h-3.5 border border-zinc-400 border-t-transparent animate-spin rounded-full" />
                     <span>Processing message transmission...</span>
                   </div>
                 )}
                 {status.type === 'success' && (
-                  <div className="bg-emerald-500/5 border border-emerald-500/10 p-3 rounded-none animate-fade-in flex flex-col gap-2.5 text-xs font-sans font-light">
+                  <div className="bg-emerald-500/5 border border-emerald-500/10 p-3 rounded-none animate-fade-in flex flex-col gap-2.5 text-base font-sans font-light">
                     <div className="flex items-start gap-2 text-emerald-400">
                       <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 animate-pulse" />
                       <span>{status.message}</span>
@@ -351,7 +351,7 @@ export default function Footer() {
                           href={status.previewUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-[#080809] font-mono text-[9px] font-bold uppercase tracking-wider transition-colors select-none"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-[#080809] font-mono text-sm font-bold uppercase tracking-wider transition-colors select-none"
                         >
                           <span>Show Email Inbox Demo ↗</span>
                         </a>
@@ -360,7 +360,7 @@ export default function Footer() {
                   </div>
                 )}
                 {status.type === 'error' && (
-                  <div className="flex items-start gap-2 text-rose-400 text-xs font-sans font-light bg-rose-500/5 border border-rose-500/10 p-3 rounded-none animate-fade-in">
+                  <div className="flex items-start gap-2 text-rose-400 text-base font-sans font-light bg-rose-500/5 border border-rose-500/10 p-3 rounded-none animate-fade-in">
                     <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
                     <span>{status.message}</span>
                   </div>
@@ -375,7 +375,7 @@ export default function Footer() {
                   )}&body=${encodeURIComponent(
                     `${formData.message ? `${formData.message}\n\n` : ''}Sender: ${formData.name || 'Anonymous'}\nEmail: ${formData.email || 'Not provided'}`
                   )}`}
-                  className="px-6 py-3 bg-zinc-950 border border-zinc-850 hover:border-emerald-500 hover:text-emerald-400 text-zinc-400 text-[10px] font-mono tracking-widest uppercase transition-colors rounded-none flex items-center justify-center gap-2 cursor-pointer select-none"
+                  className="px-6 py-3 bg-zinc-950 border border-zinc-850 hover:border-emerald-500 hover:text-emerald-400 text-zinc-400 text-sm font-mono tracking-widest uppercase transition-colors rounded-none flex items-center justify-center gap-2 cursor-pointer select-none"
                 >
                   <Mail className="w-3.5 h-3.5 text-emerald-400" />
                   <span>Mailto Courier ↗</span>
@@ -385,7 +385,7 @@ export default function Footer() {
                   id="footer-submit-btn"
                   type="submit"
                   disabled={status.type === 'loading'}
-                  className="px-8 py-3 bg-zinc-900 border border-zinc-800 hover:border-emerald-500 text-white text-[10px] font-mono tracking-widest uppercase transition-colors rounded-none flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50 select-none shrink-0"
+                  className="px-8 py-3 bg-zinc-900 border border-zinc-800 hover:border-emerald-500 text-white text-sm font-mono tracking-widest uppercase transition-colors rounded-none flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50 select-none shrink-0"
                 >
                   <span>Transmit Form</span>
                   <Send className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />

@@ -98,11 +98,11 @@ export default function App() {
 
       {/* FLOATING TOP BAR / DE-EMPHASIZED NAVIGATION */}
       <header id="portfolio-header" className="sticky top-[2px] z-50 bg-[#09090b]/80 backdrop-blur-md border-b border-zinc-900/80 px-6 py-4.5 transition-all">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
-              className="text-xs font-mono font-medium tracking-[0.2em] text-white uppercase hover:text-zinc-400 transition-colors flex items-center gap-2 group"
+              className="text-base font-mono font-medium tracking-[0.2em] text-white uppercase hover:text-zinc-400 transition-colors flex items-center gap-2 group"
             >
               <span>{personalInfo.name}</span>
               <span className="text-zinc-700 font-normal select-none group-hover:text-zinc-500 transition-colors">// PORTFOLIO</span>
@@ -112,7 +112,7 @@ export default function App() {
           </div>
 
           {/* Minimalist lower-case slash-divided nav links */}
-          <nav className="hidden md:flex items-center gap-1 text-[10px] uppercase tracking-wider font-mono">
+          <nav className="hidden md:flex items-center gap-1 text-sm uppercase tracking-wider font-mono">
             <button 
               onClick={() => scrollToSection('projects-section')} 
               className="text-zinc-500 hover:text-white px-2 py-1 transition-all hover:bg-zinc-950/40 relative group"
@@ -138,11 +138,11 @@ export default function App() {
           </nav>
 
           {/* Dynamic real-time atomic clock */}
-          <div className="hidden lg:flex items-center gap-2.5 font-mono text-[9px] tracking-wider text-zinc-500 border-l border-zinc-900 pl-4">
+          <div className="hidden lg:flex items-center gap-2.5 font-mono text-sm tracking-wider text-zinc-500 border-l border-zinc-900 pl-4">
             <Globe className="w-3.5 h-3.5 text-zinc-600 animate-spin-slow" />
             <div className="space-y-0.5">
               <span className="block uppercase text-zinc-600">GMT+5.5 / ASIA_KOLKATA</span>
-              <span className="block text-white font-medium tracking-widest tabular-nums text-[10px]">
+              <span className="block text-white font-medium tracking-widest tabular-nums text-sm">
                 {systemTime || '12:00:00'}
               </span>
             </div>
@@ -178,21 +178,21 @@ export default function App() {
             >
               <button 
                 onClick={() => scrollToSection('projects-section')} 
-                className="w-full text-left py-2 px-3 text-xs font-mono text-zinc-400 hover:text-white hover:bg-zinc-900/60 flex items-center justify-between"
+                className="w-full text-left py-2 px-3 text-base font-mono text-zinc-400 hover:text-white hover:bg-zinc-900/60 flex items-center justify-between"
               >
                 <span>[01] // projects</span>
                 <ChevronRight className="w-3 h-3 text-zinc-600" />
               </button>
               <button 
                 onClick={() => scrollToSection('experience-section')} 
-                className="w-full text-left py-2 px-3 text-xs font-mono text-zinc-400 hover:text-white hover:bg-zinc-900/60 flex items-center justify-between"
+                className="w-full text-left py-2 px-3 text-base font-mono text-zinc-400 hover:text-white hover:bg-zinc-900/60 flex items-center justify-between"
               >
                 <span>[02] // timeline</span>
                 <ChevronRight className="w-3 h-3 text-zinc-600" />
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio-footer')} 
-                className="w-full text-left py-2 px-3 text-xs font-mono text-zinc-300 bg-zinc-900/20 border border-zinc-900 hover:text-white hover:bg-zinc-900/60 flex items-center justify-between font-medium"
+                className="w-full text-left py-2 px-3 text-base font-mono text-zinc-300 bg-zinc-900/20 border border-zinc-900 hover:text-white hover:bg-zinc-900/60 flex items-center justify-between font-medium"
               >
                 <span>[03] // contact_recipient</span>
                 <ChevronRight className="w-3 h-3 text-emerald-505" />
@@ -231,16 +231,16 @@ export default function App() {
                   placeholder="Type a path command or action..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-transparent border-none text-zinc-200 placeholder-zinc-600 text-xs focus:ring-0 focus:outline-none font-mono"
+                  className="w-full bg-transparent border-none text-zinc-200 placeholder-zinc-600 text-base focus:ring-0 focus:outline-none font-mono"
                   autoFocus
                 />
-                <span className="text-[8px] font-mono select-none text-zinc-600 uppercase px-1.5 py-0.5 border border-zinc-900">
+                <span className="text-base font-mono select-none text-zinc-600 uppercase px-1.5 py-0.5 border border-zinc-900">
                   ESC_EXIT
                 </span>
               </div>
 
               {/* Suggestions flow */}
-              <div className="max-h-[320px] overflow-y-auto font-mono text-xs p-1.5 space-y-0.5">
+              <div className="max-h-[320px] overflow-y-auto font-mono text-base p-1.5 space-y-0.5">
                 {filteredCommands.length > 0 ? (
                   filteredCommands.map((item, cidx) => (
                     <button
@@ -263,13 +263,13 @@ export default function App() {
                           {item.type === 'external' && <ExternalLink className="w-3 h-3 text-zinc-600 group-hover:text-zinc-400" />}
                         </div>
                         {item.subtitle && (
-                          <div className="text-[10px] text-zinc-600 group-hover:text-zinc-400 font-light truncate max-w-[340px]">
+                          <div className="text-sm text-zinc-600 group-hover:text-zinc-400 font-light truncate max-w-[340px]">
                             {item.subtitle}
                           </div>
                         )}
                       </div>
                       
-                      <span className="text-[9px] text-zinc-700 font-mono uppercase bg-zinc-950 px-2 py-1 border border-zinc-900 select-none group-hover:text-zinc-400 group-hover:border-zinc-700">
+                      <span className="text-sm text-zinc-700 font-mono uppercase bg-zinc-950 px-2 py-1 border border-zinc-900 select-none group-hover:text-zinc-400 group-hover:border-zinc-700">
                         {item.type === 'scroll' && 'GOTO'}
                         {item.type === 'action' && (copied && item.label === 'Copy Email Address' ? 'COPIED' : 'EXEC')}
                         {item.type === 'external' && 'EXPLORE'}
@@ -277,14 +277,14 @@ export default function App() {
                     </button>
                   ))
                 ) : (
-                  <div className="p-4 text-center text-zinc-600 text-[11px]">
+                  <div className="p-4 text-center text-zinc-600 text-sm">
                     No terminal path matching search query.
                   </div>
                 )}
               </div>
 
               {/* Status bar */}
-              <div className="p-2 border-t border-zinc-900 flex items-center justify-between text-[9px] text-zinc-600 font-mono uppercase">
+              <div className="p-2 border-t border-zinc-900 flex items-center justify-between text-sm text-zinc-600 font-mono uppercase">
                 <span>Navigate via touchpad or click selection</span>
                 <span>SYSTEM_PERSIST_MODAL</span>
               </div>
@@ -383,14 +383,14 @@ export default function App() {
 
         {/* BOTTOM: THE HIGH-CONTRAST SOLID WHITE HIGH-FIDELITY STRIP */}
         <div className="w-full bg-white text-zinc-950 py-12 md:py-16 border-y border-zinc-200 relative z-20 shadow-xl transition-all">
-          <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="max-w-5xl mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Primary message and bio text block */}
             <div className="lg:col-span-8 space-y-3.5 text-left">
               <h2 className="text-xl md:text-2xl font-black text-zinc-950 tracking-tight font-sans">
                 Hey!
               </h2>
-              <p className="text-zinc-800 font-normal text-xs md:text-sm lg:text-base leading-relaxed tracking-wide font-sans">
+              <p className="text-zinc-800 font-normal text-base md:text-sm lg:text-base leading-relaxed tracking-wide font-sans">
                 I'm <strong className="text-zinc-950 font-bold">{personalInfo.name}</strong> from Ahmedabad, India! 
                 I love programming, building scalable backend APIs, optimizing machine learning engineering models, and designing elegant web experiences.
                 Feel free to check out my past work or get in touch.
@@ -401,7 +401,7 @@ export default function App() {
             <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3.5 w-full justify-start lg:justify-end">
               <button 
                 onClick={() => scrollToSection('projects-section')}
-                className="flex-1 max-w-[210px] px-5 py-3.5 bg-zinc-950 hover:bg-zinc-800 text-white font-mono text-[10px] tracking-widest uppercase transition-all shadow-md text-center active:scale-98 select-none cursor-pointer"
+                className="flex-1 max-w-[210px] px-5 py-3.5 bg-zinc-950 hover:bg-zinc-800 text-white font-mono text-sm tracking-widest uppercase transition-all shadow-md text-center active:scale-98 select-none cursor-pointer"
               >
                 Inspect Portfolio
               </button>
@@ -413,13 +413,13 @@ export default function App() {
       </section>
 
       {/* SEGMENTED PORTFOLIO CONTENT (SPACIOUS VERTICAL FLOW) */}
-      <main className="max-w-7xl mx-auto w-full px-6 md:px-16 py-12 space-y-24 z-10">
+      <main className="max-w-5xl mx-auto w-full px-6 md:px-16 py-12 space-y-24 z-10">
 
         {/* SECTION 01: SELECTED DELIVERABLES & PORTFOLIOS (PROJECT CARDS) */}
         <section id="projects-section" className="scroll-mt-24">
           <div className="mb-8 flex items-center gap-3">
-            <span className="text-zinc-600 font-mono text-xs">01 /</span>
-            <h3 className="text-[10px] uppercase tracking-[0.3em] font-mono text-zinc-400 font-bold">
+            <span className="text-zinc-600 font-mono text-base">01 /</span>
+            <h3 className="text-sm uppercase tracking-[0.3em] font-mono text-zinc-400 font-bold">
               Deliverables & Portfolio Pipelines
             </h3>
             <div className="h-px bg-zinc-900 flex-1" />

@@ -17,12 +17,12 @@ export default function Hero() {
             <div id="avatar-container" className="relative w-44 h-44 md:w-52 md:h-52 rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-indigo-700 p-[3px] shadow-2xl shadow-emerald-950/20">
               <div id="avatar-inner" className="w-full h-full bg-zinc-900 rounded-xl flex flex-col items-center justify-center p-3 text-center">
                 <span id="avatar-initials" className="text-6xl font-bold bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">NR</span>
-                <span id="avatar-title" className="text-xs font-mono text-emerald-400 mt-2 uppercase tracking-widest">{personalInfo.title}</span>
+                <span id="avatar-title" className="text-base font-mono text-emerald-400 mt-2 uppercase tracking-widest">{personalInfo.title}</span>
               </div>
             </div>
 
             {/* Quick status badge */}
-            <div id="status-badge" className="mt-5 flex items-center gap-2 bg-emerald-950/30 border border-emerald-900/50 rounded-full px-3.5 py-1 text-xs text-emerald-400 font-mono">
+            <div id="status-badge" className="mt-5 flex items-center gap-2 bg-emerald-950/30 border border-emerald-900/50 rounded-full px-3.5 py-1 text-base text-emerald-400 font-mono">
               <span id="status-dot" className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               Available for Opportunities
             </div>
@@ -41,7 +41,7 @@ export default function Hero() {
             </p>
 
             {/* Contact links */}
-            <div id="hero-contacts" className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 text-xs font-mono text-zinc-400">
+            <div id="hero-contacts" className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 text-base font-mono text-zinc-400">
               <div id="contact-location" className="flex items-center gap-1.5 min-w-[150px]">
                 <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>{personalInfo.location}</span>
@@ -98,37 +98,37 @@ export default function Hero() {
           <div id="highlight-card-exp" className="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
             <div className="flex items-center gap-2 text-emerald-400 mb-1">
               <Briefcase className="w-4 h-4" />
-              <span className="text-xs font-mono tracking-wider uppercase text-zinc-500">EXPERIENCE</span>
+              <span className="text-base font-mono tracking-wider uppercase text-zinc-500">EXPERIENCE</span>
             </div>
             <p className="text-lg md:text-2xl font-bold text-white">Full-Stack Intern</p>
-            <p className="text-xs text-zinc-400">Jan 2026 – Apr 2026</p>
+            <p className="text-base text-zinc-400">Jan 2026 – Apr 2026</p>
           </div>
 
           <div id="highlight-card-gpa" className="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
             <div className="flex items-center gap-2 text-emerald-400 mb-1">
               <GraduationCap className="w-4 h-4" />
-              <span className="text-xs font-mono tracking-wider uppercase text-zinc-500">ACADEMICS</span>
+              <span className="text-base font-mono tracking-wider uppercase text-zinc-500">ACADEMICS</span>
             </div>
             <p className="text-lg md:text-2xl font-bold text-white">7.6 CGPA</p>
-            <p className="text-xs text-zinc-400">GTU CSE (B.Tech)</p>
+            <p className="text-base text-zinc-400">GTU CSE (B.Tech)</p>
           </div>
 
           <div id="highlight-card-tech" className="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
             <div className="flex items-center gap-2 text-emerald-400 mb-1">
               <Award className="w-4 h-4" />
-              <span className="text-xs font-mono tracking-wider uppercase text-zinc-500">AI FOCUS</span>
+              <span className="text-base font-mono tracking-wider uppercase text-zinc-500">AI FOCUS</span>
             </div>
             <p className="text-lg md:text-2xl font-bold text-white">LangChain & BERT</p>
-            <p className="text-xs text-zinc-400">RAG & Transformer Models</p>
+            <p className="text-base text-zinc-400">RAG & Transformer Models</p>
           </div>
 
           <div id="highlight-card-cert" className="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
             <div className="flex items-center gap-2 text-emerald-400 mb-1">
               <Award className="w-4 h-4" />
-              <span className="text-xs font-mono tracking-wider uppercase text-zinc-500">CREDENTIAL</span>
+              <span className="text-base font-mono tracking-wider uppercase text-zinc-500">CREDENTIAL</span>
             </div>
             <p className="text-lg md:text-2xl font-bold text-white">Data Analyst</p>
-            <p className="text-xs text-zinc-400">Certified by DataCamp</p>
+            <p className="text-base text-zinc-400">Certified by DataCamp</p>
           </div>
         </div>
 
