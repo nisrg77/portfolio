@@ -1,38 +1,15 @@
 import express, { Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
-import { GoogleGenAI } from '@google/genai';
 import { createServer as createViteServer } from 'vite';
-import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
-
-dotenv.config();
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 
-// Lazy-initialized Gemini client to prevent crash if key is missing on startup
-let aiClient: GoogleGenAI | null = null;
-
-function getGeminiClient(): GoogleGenAI {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
-    throw new Error('GEMINI_API_KEY is not configured on this server. Please set it in your Secrets panel or .env file.');
-  }
-  if (!aiClient) {
-    aiClient = new GoogleGenAI({
-      apiKey,
-      httpOptions: {
-        headers: {
-          'User-Agent': 'aistudio-build',
-        },
-      },
-    });
-  }
-  return aiClient;
-}
+// Gemini client logic removed as per requirements
 
 const SYSTEM_INSTRUCTION = `You are a helpful, extremely professional AI Representative and Career Assistant for Nisarg Rana, a Software Engineer, AI Engineer, and Backend Specialist.
 Your goal is to answer questions from recruiters, managers, and technology professionals about Nisarg's work history, skills, education, and credentials based strictly on his true resume details.
@@ -122,12 +99,12 @@ app.post('/api/contact', async (req: Request, res: Response) => {
       console.error('Error writing submission data:', err);
     }
 
-    // 2. Real SMTP Email delivery logic via Nodemailer
-    const host = process.env.SMTP_HOST;
-    const port = process.env.SMTP_PORT;
-    const user = process.env.SMTP_USER;
-    const pass = process.env.SMTP_PASS;
-    const receiver = process.env.RECEIVER_EMAIL || 'rnnisarg7@gmail.com';
+    // 2. Email delivery logic (Sandbox only)
+    const host = undefined;
+    const port = undefined;
+    const user = undefined;
+    const pass = undefined;
+    const receiver = 'rnnisarg7@gmail.com';
 
     let emailSent = false;
     let feedbackMessage = 'Thank you! Your message was received offline and logged securely.';
@@ -276,30 +253,7 @@ app.post('/api/chat', async (req: Request, res: Response) => {
       return res.status(400).json({ error: 'Message content is required.' });
     }
 
-    const ai = getGeminiClient();
-
-    // Map history to the structured format required by the Gemini API
-    const formattedContents = [
-      ...(history || []).map((msg: any) => ({
-        role: msg.role === 'user' ? 'user' : 'model',
-        parts: [{ text: msg.text }],
-      })),
-      {
-        role: 'user',
-        parts: [{ text: message }],
-      },
-    ];
-
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.5-flash',
-      contents: formattedContents,
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7,
-      },
-    });
-
-    const text = response.text || 'I apologize, but I could not formulate a response at the moment.';
+    const text = "I'm currently running in offline mode, but feel free to reach out to Nisarg via his email: rnnisarg7@gmail.com!";
     res.json({ text });
   } catch (error: any) {
     console.error('Gemini API Error:', error);
