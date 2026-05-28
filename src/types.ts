@@ -17,7 +17,7 @@ export interface ProjectItem {
   challengesOvercome: string; // Specific technical challenges solved/overcome
   extendedDetails: string;
   techStack: string[];
-  category: 'full-stack' | 'ai-ml' | 'data-analytics' | 'backend';
+  category: 'full-stack' | 'ai-ml' | 'data-analytics' | 'backend' | 'gen-ai';
   githubUrl?: string;
   liveDemoUrl?: string;
   presentationUrl?: string;

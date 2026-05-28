@@ -12,7 +12,8 @@ import {
   CheckCircle2,
   Compass,
   ArrowRight,
-  ShieldAlert
+  ShieldAlert,
+  Sparkles
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { projects } from '../data';
@@ -30,6 +31,12 @@ const categoryTheme: Record<string, {
     badge: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     accent: '#3b82f6',
     icon: <Layers className="w-4 h-4 text-blue-400" />
+  },
+  'gen-ai': {
+    label: 'Gen AI',
+    badge: 'bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/20',
+    accent: '#d946ef',
+    icon: <Sparkles className="w-4 h-4 text-fuchsia-400" />
   },
   'ai-ml': {
     label: 'ML / AI',
@@ -58,7 +65,8 @@ export default function Projects() {
   const categories = [
     { key: 'all', label: 'All Projects' },
     { key: 'full-stack', label: 'Full-Stack' },
-    { key: 'ai-ml', label: 'Machine Learning' },
+    { key: 'gen-ai', label: 'Gen AI' },
+    { key: 'ai-ml', label: 'ML / AI' },
     { key: 'data-analytics', label: 'Data Analytics' },
     { key: 'backend', label: 'Backend' },
   ];
