@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  Github, 
-  Linkedin, 
-  Globe, 
-  Menu, 
+import {
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  Globe,
+  Menu,
   X,
   ChevronRight
 } from 'lucide-react';
@@ -53,7 +53,7 @@ export default function App() {
 
   return (
     <div id="portfolio-app-root" className="min-h-screen bg-[#09090b] text-zinc-300 font-sans flex flex-col selection:bg-zinc-800 selection:text-white relative">
-      
+
       {/* Top accent line */}
       <div className="h-[2px] bg-gradient-to-r from-emerald-500/20 via-emerald-500 to-zinc-900 w-full fixed top-0 z-[60]" />
 
@@ -66,11 +66,10 @@ export default function App() {
       {/* NAVBAR */}
       <header
         id="portfolio-header"
-        className={`sticky top-[2px] z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-[#09090b]/95 backdrop-blur-md border-b border-zinc-800/80 shadow-lg shadow-black/20'
-            : 'bg-transparent border-b border-zinc-900/40'
-        } px-6 py-4`}
+        className={`sticky top-[2px] z-50 transition-all duration-300 ${scrolled
+          ? 'bg-[#09090b]/95 backdrop-blur-md border-b border-zinc-800/80 shadow-lg shadow-black/20'
+          : 'bg-transparent border-b border-zinc-900/40'
+          } px-6 py-4`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
@@ -153,14 +152,14 @@ export default function App() {
 
       {/* HERO SECTION */}
       <section id="hero-showcase" className="relative w-full bg-[#09090b] overflow-hidden border-b border-zinc-800/60 z-10">
-        
+
         {/* Plexus fills the entire section */}
         <PlexusBackground />
 
         {/* Dark plexus background + hero content */}
         <div className="relative min-h-screen flex flex-col justify-center items-center px-6 py-24 text-center w-full z-20">
           <div className="max-w-3xl mx-auto flex flex-col items-center justify-center space-y-8 relative z-20">
-            
+
             {/* Avatar */}
             <motion.div
               initial={{ scale: 0.85, opacity: 0 }}
@@ -251,7 +250,7 @@ export default function App() {
                 Hey, I'm Nisarg! 👋
               </h2>
               <p className="text-zinc-600 text-base md:text-lg leading-relaxed max-w-2xl">
-                I'm a <strong className="text-zinc-900">Software & AI Engineer</strong> from Ahmedabad, India. I love building scalable backend APIs, optimizing machine learning pipelines, and creating elegant web experiences. Feel free to explore my work or reach out.
+                I'm a <strong className="text-zinc-900">Software & AI Engineer</strong> from Bharuch, India. I love building scalable backend APIs, optimizing machine learning pipelines, and creating elegant web experiences. Feel free to explore my work or reach out.
               </p>
               <div className="flex flex-wrap gap-3 pt-1">
                 {['Python', 'Django REST', 'React', 'TypeScript', 'LangChain', 'BERT', 'PostgreSQL'].map((skill) => (

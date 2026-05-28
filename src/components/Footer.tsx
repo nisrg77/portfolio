@@ -43,7 +43,7 @@ export default function Footer() {
         this.y = Math.random() * h;
         this.vx = (Math.random() - 0.5) * 0.35;
         this.vy = (Math.random() - 0.5) * 0.35;
-        this.radius = Math.random() * 1.5 + 1;
+        this.radius = Math.random() * 1.5 + 2;
       }
 
       update(w: number, h: number) {
@@ -375,25 +375,12 @@ export default function Footer() {
           )}
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 pt-1">
-            <a
-              id="footer-mailto-btn"
-              href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(
-                formData.name ? `Portfolio Message from ${formData.name}` : 'Portfolio Correspondence'
-              )}&body=${encodeURIComponent(
-                `${formData.message ? `${formData.message}\n\n` : ''}Sender: ${formData.name || 'Anonymous'}\nEmail: ${formData.email || 'Not provided'}`
-              )}`}
-              className="flex-1 px-5 py-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-600 text-zinc-400 hover:text-white text-sm font-mono tracking-wider uppercase transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer select-none"
-            >
-              <Mail className="w-3.5 h-3.5" />
-              <span>Email Directly</span>
-            </a>
-
+          <div className="flex pt-1">
             <button
               id="footer-submit-btn"
               type="submit"
               disabled={status.type === 'loading'}
-              className="flex-1 px-5 py-3 bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-500 text-white text-sm font-mono tracking-wider uppercase transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 select-none"
+              className="w-full px-5 py-3 bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-500 text-white text-sm font-mono tracking-wider uppercase transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 select-none"
             >
               <span>Send Message</span>
               <Send className="w-3.5 h-3.5" />

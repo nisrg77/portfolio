@@ -29,7 +29,7 @@ export default function PlexusBackground() {
         // Slow subtle movement
         this.vx = (Math.random() - 0.5) * 0.4;
         this.vy = (Math.random() - 0.5) * 0.4;
-        this.radius = Math.random() * 1.5 + 1;
+        this.radius = Math.random() * 1.5 + 3;
       }
 
       update(w: number, h: number) {
