@@ -78,8 +78,8 @@ export default function App() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center gap-3 group"
           >
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center group-hover:bg-emerald-500/20 transition-all">
-              <span className="text-emerald-400 font-bold text-sm font-mono">N</span>
+            <div className="w-8 h-8 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center group-hover:bg-zinc-700 transition-all">
+              <span className="text-zinc-300 font-bold text-sm font-mono">N</span>
             </div>
             <span className="text-white font-semibold text-base tracking-tight">{personalInfo.name}</span>
           </button>
@@ -100,7 +100,7 @@ export default function App() {
             ))}
             <button
               onClick={() => scrollToSection('portfolio-footer')}
-              className="ml-2 px-5 py-2 text-sm font-semibold text-zinc-900 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-all shadow-lg shadow-emerald-500/20"
+              className="px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800/60 transition-all"
             >
               Contact
             </button>
@@ -152,12 +152,13 @@ export default function App() {
       </header>
 
       {/* HERO SECTION */}
-      <section id="hero-showcase" className="relative w-full bg-[#09090b] flex flex-col justify-between overflow-hidden border-b border-zinc-800/60 z-10">
+      <section id="hero-showcase" className="relative w-full bg-[#09090b] overflow-hidden border-b border-zinc-800/60 z-10">
         
-        {/* Dark plexus background + hero content */}
-        <div className="relative min-h-[92vh] flex flex-col justify-center items-center px-6 py-24 text-center w-full">
-          <PlexusBackground />
+        {/* Plexus fills the entire section */}
+        <PlexusBackground />
 
+        {/* Dark plexus background + hero content */}
+        <div className="relative min-h-[92vh] flex flex-col justify-center items-center px-6 py-24 text-center w-full z-20">
           <div className="max-w-3xl mx-auto flex flex-col items-center justify-center space-y-8 relative z-20">
             
             {/* Avatar */}
@@ -228,7 +229,7 @@ export default function App() {
             >
               <button
                 onClick={() => scrollToSection('projects-section')}
-                className="px-7 py-3 bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-semibold text-base rounded-xl transition-all shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40"
+                className="px-7 py-3 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold text-base rounded-xl transition-all border border-zinc-700 hover:border-zinc-500"
               >
                 View Projects
               </button>
@@ -279,7 +280,7 @@ export default function App() {
         <section id="projects-section" className="scroll-mt-24">
           <div className="mb-10 flex items-center gap-4">
             <div className="flex items-center gap-2">
-              <span className="text-emerald-500 font-mono text-sm font-bold">01</span>
+              <span className="text-zinc-500 font-mono text-sm font-bold">01</span>
               <h2 className="text-2xl font-bold text-white tracking-tight">Projects</h2>
             </div>
             <div className="h-px bg-zinc-800 flex-1" />
