@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Lora", Georgia, Cambria, serif;
+}
+
+/* Custom fade effects and utility classes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* HIGH FIDELITY PRINT STYLES FOR THE CV MODULE */
+@media print {
+  /* Hide the rest of the application/body */
+  html, body {
+    background-color: white !important;
+    background-image: none !important;
+    color: black !important;
+    overflow: visible !important;
+    height: auto !important;
+  }
+  
+  #root, #portfolio-app-root, header, nav, footer, section, button, .lucide {
+    display: none !important;
+  }
+
+  /* Make the CV container fully visible and positioned perfectly */
+  #printable-cv {
+    display: block !important;
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 1.5cm !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+  }
+
+  #printable-cv * {
+    visibility: visible !important;
+    color: black !important;
+    border-color: #e2e8f0 !important; /* light slate border color representing subtle gray lines */
+  }
+
+  /* Keep emerald badges clean and readable in print */
+  #printable-cv .text-emerald-700 {
+    color: #047857 !important;
+  }
+}
+
+
+

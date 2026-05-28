@@ -1,0 +1,6 @@
+{
+  "name": "Nisarg Rana - Software Engineer Portfolio",
+  "description": "Interactive developer portfolio for Nisarg Rana, Aspiring AI Engineer and Backend Developer. Built with React, Tailwind CSS, Express, and server-side Gemini integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
