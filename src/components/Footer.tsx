@@ -228,173 +228,178 @@ export default function Footer() {
     <footer 
       id="portfolio-footer" 
       ref={containerRef}
-      className="relative min-h-[500px] w-full bg-[#080809] border-t border-zinc-900 overflow-hidden flex flex-col justify-center py-24 px-6 md:px-16 z-20 pointer-events-auto"
+      className="relative w-full bg-[#080809] border-t border-zinc-900 overflow-hidden flex flex-col md:flex-row min-h-[520px] z-20 pointer-events-auto"
     >
-      {/* Constellation Live Canvas Background Layer */}
+      {/* Constellation Canvas Background */}
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none opacity-80"
         style={{ mixBlendMode: 'screen' }}
       />
 
-      {/* Grid Content Overlay sitting legibly over canvas - Balanced Two Column Layout */}
-      <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 z-20">
-        
-        {/* Left Column (6 Columns): Minimal Typographic Brand panel */}
-        <div id="footer-brand-panel" className="md:col-span-6 flex flex-col justify-between space-y-8 md:space-y-0 text-left">
-          <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-              <span className="font-mono text-sm tracking-[0.3em] text-zinc-500 uppercase">
-                Location & Origin
-              </span>
-            </div>
-            
-            <h3 className="text-3xl md:text-4xl font-sans font-light tracking-tight text-white leading-normal max-w-md">
-              Let's craft the next <br />
-              <span className="text-zinc-500 font-medium text-emerald-400">technological epoch.</span>
-            </h3>
-          </div>
-
-          <div className="space-y-2 border-t border-zinc-900/60 pt-6 text-sm font-mono text-zinc-600 uppercase tracking-widest">
-            <p>NISARG RANA , 2026</p>
-          </div>
-        </div>
-
-        {/* Right Column (6 Columns): Reach Out Form Panel */}
-        <div id="footer-reachout-panel" className="md:col-span-6 space-y-6 text-left">
+      {/* LEFT HALF — Brand panel */}
+      <div id="footer-brand-panel" className="relative z-20 flex flex-col justify-between w-full md:w-1/2 px-10 md:px-16 py-16 border-b md:border-b-0 md:border-r border-zinc-900">
+        <div className="space-y-6">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <h4 className="font-mono text-sm tracking-[0.25em] text-white uppercase">
-              Correspondence / Reach Out
-            </h4>
+            <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
+            <span className="font-mono text-sm tracking-[0.3em] text-zinc-500 uppercase">
+              Get in touch
+            </span>
           </div>
-          <p className="text-zinc-400 text-base leading-relaxed font-sans">
-            Have an opportunity, a project proposal, or simply a question? Send an instant transmission. I will receive it directly.
+          
+          <h3 className="text-4xl md:text-5xl font-sans font-light tracking-tight text-white leading-snug">
+            Let's craft the next <br />
+            <span className="font-medium text-zinc-400">technological epoch.</span>
+          </h3>
+
+          <p className="text-zinc-500 text-base leading-relaxed max-w-sm">
+            Open to full-time roles, freelance projects, and collaborations. Reach out and let's build something great together.
           </p>
 
-          <form onSubmit={handleSubmit} id="footer-contact-form" className="space-y-4 pt-2">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Name field */}
-              <div className="space-y-1">
-                <label htmlFor="footer-field-name" className="text-sm font-mono uppercase text-zinc-500 tracking-widest block">
-                  Your Name
-                </label>
-                <input
-                  id="footer-field-name"
-                  name="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="e.g. Liam Vance"
-                  disabled={status.type === 'loading'}
-                  className="w-full text-base font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700"
-                />
-              </div>
-
-              {/* Email field */}
-              <div className="space-y-1">
-                <label htmlFor="footer-field-email" className="text-sm font-mono uppercase text-zinc-500 tracking-widest block">
-                  Email Address
-                </label>
-                <input
-                  id="footer-field-email"
-                  name="email"
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="e.g. liam@company.com"
-                  disabled={status.type === 'loading'}
-                  className="w-full text-base font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700"
-                />
-              </div>
+          {/* Contact info */}
+          <div className="space-y-3 pt-2">
+            <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group">
+              <Mail className="w-4 h-4 text-zinc-600 group-hover:text-zinc-300 shrink-0" />
+              <span className="text-sm font-mono">{personalInfo.email}</span>
+            </a>
+            <a href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors group">
+              <Phone className="w-4 h-4 text-zinc-600 group-hover:text-zinc-300 shrink-0" />
+              <span className="text-sm font-mono">{personalInfo.phone}</span>
+            </a>
+            <div className="flex items-center gap-3 text-zinc-400 group">
+              <MapPin className="w-4 h-4 text-zinc-600 shrink-0" />
+              <span className="text-sm font-mono">{personalInfo.location}</span>
             </div>
+          </div>
 
-            {/* Message field */}
-            <div className="space-y-1">
-              <label htmlFor="footer-field-message" className="text-sm font-mono uppercase text-zinc-500 tracking-widest block">
-                Message Content
-              </label>
-              <textarea
-                id="footer-field-message"
-                name="message"
-                required
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Outline your proposal, request, or details..."
-                disabled={status.type === 'loading'}
-                className="w-full text-base font-sans text-white bg-zinc-950/40 border border-zinc-850 focus:border-emerald-500 focus:outline-none px-3.5 py-2.5 rounded-none transition-all placeholder:text-zinc-700 resize-none animate-none"
-              />
-            </div>
-
-            {/* Submit and status row */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-2">
-              <div className="flex-1">
-                {status.type === 'loading' && (
-                  <div role="status" className="flex items-center gap-2 text-zinc-400 text-base font-mono font-light">
-                    <div className="w-3.5 h-3.5 border border-zinc-400 border-t-transparent animate-spin rounded-full" />
-                    <span>Processing message transmission...</span>
-                  </div>
-                )}
-                {status.type === 'success' && (
-                  <div className="bg-emerald-500/5 border border-emerald-500/10 p-3 rounded-none animate-fade-in flex flex-col gap-2.5 text-base font-sans font-light">
-                    <div className="flex items-start gap-2 text-emerald-400">
-                      <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 animate-pulse" />
-                      <span>{status.message}</span>
-                    </div>
-                    {status.previewUrl && (
-                      <div className="pt-2 border-t border-emerald-500/10 flex items-center">
-                        <a 
-                          href={status.previewUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-[#080809] font-mono text-sm font-bold uppercase tracking-wider transition-colors select-none"
-                        >
-                          <span>Show Email Inbox Demo ↗</span>
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                )}
-                {status.type === 'error' && (
-                  <div className="flex items-start gap-2 text-rose-400 text-base font-sans font-light bg-rose-500/5 border border-rose-500/10 p-3 rounded-none animate-fade-in">
-                    <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
-                    <span>{status.message}</span>
-                  </div>
-                )}
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-stretch gap-3 shrink-0">
-                <a
-                  id="footer-mailto-btn"
-                  href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(
-                    formData.name ? `Portfolio Message from ${formData.name}` : 'Portfolio Correspondence'
-                  )}&body=${encodeURIComponent(
-                    `${formData.message ? `${formData.message}\n\n` : ''}Sender: ${formData.name || 'Anonymous'}\nEmail: ${formData.email || 'Not provided'}`
-                  )}`}
-                  className="px-6 py-3 bg-zinc-950 border border-zinc-850 hover:border-emerald-500 hover:text-emerald-400 text-zinc-400 text-sm font-mono tracking-widest uppercase transition-colors rounded-none flex items-center justify-center gap-2 cursor-pointer select-none"
-                >
-                  <Mail className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Mailto Courier ↗</span>
-                </a>
-
-                <button
-                  id="footer-submit-btn"
-                  type="submit"
-                  disabled={status.type === 'loading'}
-                  className="px-8 py-3 bg-zinc-900 border border-zinc-800 hover:border-emerald-500 text-white text-sm font-mono tracking-widest uppercase transition-colors rounded-none flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-50 select-none shrink-0"
-                >
-                  <span>Transmit Form</span>
-                  <Send className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
-                </button>
-              </div>
-            </div>
-          </form>
+          {/* Social links */}
+          <div className="flex items-center gap-4 pt-2">
+            <a href={personalInfo.github} target="_blank" rel="noreferrer" aria-label="GitHub"
+              className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600 transition-all">
+              <Github className="w-4 h-4" />
+            </a>
+            <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"
+              className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-500 hover:text-white hover:border-zinc-600 transition-all">
+              <Linkedin className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
+        <div className="pt-10 border-t border-zinc-900/60 text-sm font-mono text-zinc-700 uppercase tracking-widest">
+          <p>Nisarg Rana © 2026</p>
+        </div>
+      </div>
+
+      {/* RIGHT HALF — Contact form, fills entire right side */}
+      <div id="footer-reachout-panel" className="relative z-20 flex flex-col w-full md:w-1/2 px-10 md:px-16 py-16">
+        <div className="flex items-center gap-2 mb-6">
+          <div className="w-1.5 h-1.5 rounded-full bg-zinc-500 animate-pulse" />
+          <h4 className="font-mono text-sm tracking-[0.25em] text-white uppercase">
+            Send a Message
+          </h4>
+        </div>
+
+        <form onSubmit={handleSubmit} id="footer-contact-form" className="flex flex-col flex-1 gap-5">
+          {/* Name + Email row */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="space-y-1.5">
+              <label htmlFor="footer-field-name" className="text-xs font-mono uppercase text-zinc-500 tracking-widest block">
+                Your Name
+              </label>
+              <input
+                id="footer-field-name"
+                name="name"
+                type="text"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="e.g. Liam Vance"
+                disabled={status.type === 'loading'}
+                className="w-full text-sm font-sans text-white bg-zinc-900/60 border border-zinc-800 focus:border-zinc-500 focus:outline-none px-4 py-3 rounded-lg transition-all placeholder:text-zinc-700"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <label htmlFor="footer-field-email" className="text-xs font-mono uppercase text-zinc-500 tracking-widest block">
+                Email Address
+              </label>
+              <input
+                id="footer-field-email"
+                name="email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="e.g. liam@company.com"
+                disabled={status.type === 'loading'}
+                className="w-full text-sm font-sans text-white bg-zinc-900/60 border border-zinc-800 focus:border-zinc-500 focus:outline-none px-4 py-3 rounded-lg transition-all placeholder:text-zinc-700"
+              />
+            </div>
+          </div>
+
+          {/* Message — grows to fill remaining space */}
+          <div className="space-y-1.5 flex-1 flex flex-col">
+            <label htmlFor="footer-field-message" className="text-xs font-mono uppercase text-zinc-500 tracking-widest block">
+              Message
+            </label>
+            <textarea
+              id="footer-field-message"
+              name="message"
+              required
+              rows={6}
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Outline your proposal, opportunity, or question..."
+              disabled={status.type === 'loading'}
+              className="w-full flex-1 text-sm font-sans text-white bg-zinc-900/60 border border-zinc-800 focus:border-zinc-500 focus:outline-none px-4 py-3 rounded-lg transition-all placeholder:text-zinc-700 resize-none"
+            />
+          </div>
+
+          {/* Status messages */}
+          {status.type === 'loading' && (
+            <div role="status" className="flex items-center gap-2 text-zinc-400 text-sm font-mono">
+              <div className="w-3.5 h-3.5 border border-zinc-400 border-t-transparent animate-spin rounded-full" />
+              <span>Sending...</span>
+            </div>
+          )}
+          {status.type === 'success' && (
+            <div className="flex items-start gap-2 text-zinc-300 text-sm font-sans bg-zinc-800/50 border border-zinc-700 p-3 rounded-lg animate-fade-in">
+              <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-zinc-400" />
+              <span>{status.message}</span>
+            </div>
+          )}
+          {status.type === 'error' && (
+            <div className="flex items-start gap-2 text-rose-400 text-sm font-sans bg-rose-500/5 border border-rose-500/10 p-3 rounded-lg animate-fade-in">
+              <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
+              <span>{status.message}</span>
+            </div>
+          )}
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 pt-1">
+            <a
+              id="footer-mailto-btn"
+              href={`mailto:${personalInfo.email}?subject=${encodeURIComponent(
+                formData.name ? `Portfolio Message from ${formData.name}` : 'Portfolio Correspondence'
+              )}&body=${encodeURIComponent(
+                `${formData.message ? `${formData.message}\n\n` : ''}Sender: ${formData.name || 'Anonymous'}\nEmail: ${formData.email || 'Not provided'}`
+              )}`}
+              className="flex-1 px-5 py-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-600 text-zinc-400 hover:text-white text-sm font-mono tracking-wider uppercase transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer select-none"
+            >
+              <Mail className="w-3.5 h-3.5" />
+              <span>Email Directly</span>
+            </a>
+
+            <button
+              id="footer-submit-btn"
+              type="submit"
+              disabled={status.type === 'loading'}
+              className="flex-1 px-5 py-3 bg-zinc-800 border border-zinc-700 hover:bg-zinc-700 hover:border-zinc-500 text-white text-sm font-mono tracking-wider uppercase transition-all rounded-lg flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 select-none"
+            >
+              <span>Send Message</span>
+              <Send className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </form>
       </div>
 
     </footer>
