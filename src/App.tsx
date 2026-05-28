@@ -72,7 +72,7 @@ export default function App() {
             : 'bg-transparent border-b border-zinc-900/40'
         } px-6 py-4`}
       >
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -244,7 +244,7 @@ export default function App() {
 
         {/* Bio strip */}
         <div className="w-full bg-white text-zinc-950 py-14 md:py-20 border-t border-zinc-200 relative z-20">
-          <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-8 space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 tracking-tight">
                 Hey, I'm Nisarg! 👋
@@ -273,7 +273,7 @@ export default function App() {
       </section>
 
       {/* MAIN CONTENT */}
-      <main className="max-w-6xl mx-auto w-full px-6 md:px-12 py-20 space-y-28 z-10">
+      <main className="max-w-7xl mx-auto w-full px-4 md:px-8 py-20 space-y-28 z-10">
 
         {/* Projects */}
         <section id="projects-section" className="scroll-mt-24">

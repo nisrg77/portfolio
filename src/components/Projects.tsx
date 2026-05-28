@@ -75,7 +75,7 @@ export default function Projects() {
       </div>
 
       {/* PROJECTS GRID CARD LAYOUT */}
-      <div id="projects-grid" className="grid grid-cols-1 gap-6">
+      <div id="projects-grid" className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {filteredProjects.map((proj) => {
           const isExpanded = expandedId === proj.id;
           return (
