@@ -238,7 +238,7 @@ export default function Footer() {
       />
 
       {/* Grid Content Overlay sitting legibly over canvas - Balanced Two Column Layout */}
-      <div className="relative max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 z-20">
+      <div className="relative max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 z-20">
         
         {/* Left Column (6 Columns): Minimal Typographic Brand panel */}
         <div id="footer-brand-panel" className="md:col-span-6 flex flex-col justify-between space-y-8 md:space-y-0 text-left">
@@ -269,7 +269,7 @@ export default function Footer() {
               Correspondence / Reach Out
             </h4>
           </div>
-          <p className="text-zinc-400 text-base leading-relaxed font-sans max-w-md">
+          <p className="text-zinc-400 text-base leading-relaxed font-sans">
             Have an opportunity, a project proposal, or simply a question? Send an instant transmission. I will receive it directly.
           </p>
 
