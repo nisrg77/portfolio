@@ -158,7 +158,7 @@ export default function App() {
         <PlexusBackground />
 
         {/* Dark plexus background + hero content */}
-        <div className="relative min-h-[92vh] flex flex-col justify-center items-center px-6 py-24 text-center w-full z-20">
+        <div className="relative min-h-screen flex flex-col justify-center items-center px-6 py-24 text-center w-full z-20">
           <div className="max-w-3xl mx-auto flex flex-col items-center justify-center space-y-8 relative z-20">
             
             {/* Avatar */}
