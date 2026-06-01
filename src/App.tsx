@@ -253,7 +253,7 @@ export default function App() {
                 I'm a <strong className="text-zinc-900">Software & AI Engineer</strong> from Bharuch, India. I love building scalable backend APIs, optimizing machine learning pipelines, and creating elegant web experiences. Feel free to explore my work or reach out.
               </p>
               <div className="flex flex-wrap gap-3 pt-1">
-                {['Python', 'Django REST', 'React', 'TypeScript', 'LangChain', 'BERT', 'PostgreSQL'].map((skill) => (
+                {['Python', 'Django REST', 'React', 'TypeScript', 'Pandas', 'NumPy', 'Scikit-learn'].map((skill) => (
                   <span key={skill} className="px-3 py-1.5 bg-zinc-100 text-zinc-700 text-sm font-medium rounded-lg border border-zinc-200">
                     {skill}
                   </span>
