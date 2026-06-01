@@ -292,6 +292,50 @@ export default function App() {
           <Experience />
         </section>
 
+        {/* Certifications */}
+        <section id="certifications-section" className="scroll-mt-24">
+          <div className="mb-10 flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-zinc-500 font-mono text-sm font-bold">03</span>
+              <h2 className="text-2xl font-bold text-white tracking-tight">Certifications</h2>
+            </div>
+            <div className="h-px bg-zinc-800 flex-1" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {personalInfo.certifications.map((cert, index) => (
+              <div
+                key={index}
+                className="p-6 rounded-2xl bg-zinc-900/40 border border-zinc-800/80 flex flex-col justify-between"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-mono text-emerald-400 bg-emerald-950/40 border border-emerald-900/50 px-2.5 py-1 rounded-md">
+                      {cert.issuer}
+                    </span>
+                    <span className="text-xs font-mono text-zinc-500">{cert.year}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white">
+                    {cert.title}
+                  </h3>
+                </div>
+                {cert.link && (
+                  <div className="mt-4">
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-mono text-emerald-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      Verify Credential →
+                    </a>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
       </main>
 
       {/* Footer */}
