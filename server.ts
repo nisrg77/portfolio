@@ -29,8 +29,8 @@ Education & Credentials:
   Institution: Shri S'ad Vidya Mandal Institute Of Technology, GTU
   Updated CGPA: 7.6 / 10 
 - Certifications:
-  1. Data Scientist Certification from DataCamp (https://www.datacamp.com/certificate/DS0029872987923)
-  2. Data Analyst Certification from DataCamp (https://www.datacamp.com/certificate/DA0029692482572)
+  1. Data Analyst Certification from DataCamp (https://www.datacamp.com/certificate/DA0029692482572)
+  2. Data Scientist Certification from DataCamp (https://www.datacamp.com/certificate/DS0029872987923)
 
 Professional Experience:
 1. Python Developer Intern | Grownited Pvt. Ltd. (Ahmedabad) [Jan 2026 – April 2026 (Updated)]
@@ -75,7 +75,7 @@ app.post('/api/contact', async (req: Request, res: Response) => {
     // 1. Persist to JSON storage so submissions are always preserved
     const submissionsPath = path.join(process.cwd(), 'submissions.json');
     let submissions = [];
-    
+
     try {
       if (fs.existsSync(submissionsPath)) {
         const fileContent = fs.readFileSync(submissionsPath, 'utf-8');
@@ -135,15 +135,15 @@ app.post('/api/contact', async (req: Request, res: Response) => {
           replyTo: email, // Direct reply to sender
           subject: `📩 New Contact: ${name}`,
           text: `You have received a new contact submission from your portfolio website.\n\n` +
-                `Sender Details:\n` +
-                `- Name: ${name}\n` +
-                `- Email: ${email}\n` +
-                `- Date: ${new Date().toLocaleString()}\n\n` +
-                `Message:\n` +
-                `----------------------------------------\n` +
-                `${message}\n` +
-                `----------------------------------------\n\n` +
-                `To reply to this person, simply reply directly to this mail, or mail them at: ${email}`,
+            `Sender Details:\n` +
+            `- Name: ${name}\n` +
+            `- Email: ${email}\n` +
+            `- Date: ${new Date().toLocaleString()}\n\n` +
+            `Message:\n` +
+            `----------------------------------------\n` +
+            `${message}\n` +
+            `----------------------------------------\n\n` +
+            `To reply to this person, simply reply directly to this mail, or mail them at: ${email}`,
           html: `
             <div style="font-family: system-ui, -apple-system, sans-serif; max-width: 600px; margin: 0 auto; padding: 24px; border: 1px solid #e4e4e7; border-radius: 8px; background-color: #ffffff; color: #18181b;">
               <h2 style="color: #10b981; font-size: 20px; font-weight: 600; border-bottom: 2px solid #f4f4f5; padding-bottom: 12px; margin-top: 0; display: flex; align-items: center; gap: 8px;">
