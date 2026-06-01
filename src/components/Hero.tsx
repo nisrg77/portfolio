@@ -125,10 +125,24 @@ export default function Hero() {
           <div id="highlight-card-cert" className="p-4 rounded-xl bg-zinc-900/50 border border-zinc-800/80">
             <div className="flex items-center gap-2 text-emerald-400 mb-1">
               <Award className="w-4 h-4" />
-              <span className="text-base font-mono tracking-wider uppercase text-zinc-500">CREDENTIAL</span>
+              <span className="text-base font-mono tracking-wider uppercase text-zinc-500">CREDENTIALS</span>
             </div>
-            <p className="text-lg md:text-2xl font-bold text-white">Data Analyst</p>
-            <p className="text-base text-zinc-400">Certified by DataCamp</p>
+            <div className="flex flex-col gap-2">
+              {personalInfo.certifications.map((cert, index) => (
+                <div key={index} className={index > 0 ? "pt-1.5 border-t border-zinc-800/60" : ""}>
+                  <p className="text-sm font-bold text-white">
+                    {cert.link ? (
+                      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors">
+                        {cert.title}
+                      </a>
+                    ) : (
+                      cert.title
+                    )}
+                  </p>
+                  <p className="text-xs text-zinc-400">Certified by {cert.issuer}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

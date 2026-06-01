@@ -19,7 +19,14 @@ export const personalInfo = {
     {
       title: 'Data Analyst Certification',
       issuer: 'DataCamp',
-      year: '2026'
+      year: '2026',
+      link: 'https://www.datacamp.com/certificate/DA0029692482572'
+    },
+    {
+      title: 'Data Scientist Certification',
+      issuer: 'DataCamp',
+      year: '2026',
+      link: 'https://www.datacamp.com/certificate/DS0029872987923'
     }
   ]
 };

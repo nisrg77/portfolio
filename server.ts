@@ -28,7 +28,9 @@ Education & Credentials:
 - Degree: Bachelor of Technology (B.Tech) in Computer Science & Engineering (2022 - 2026)
   Institution: Shri S'ad Vidya Mandal Institute Of Technology, GTU
   Updated CGPA: 7.6 / 10 
-- Certification: Data Analyst Certification from DataCamp (achieved 2025)
+- Certifications:
+  1. Data Scientist Certification from DataCamp (https://www.datacamp.com/certificate/DS0029872987923)
+  2. Data Analyst Certification from DataCamp (https://www.datacamp.com/certificate/DA0029692482572)
 
 Professional Experience:
 1. Python Developer Intern | Grownited Pvt. Ltd. (Ahmedabad) [Jan 2026 – April 2026 (Updated)]
